@@ -1,144 +1,62 @@
-
 body {
     background-color: #dedede;
 }
 
 h1 {
     text-align: center;
-    font-family:Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 32px;
 }
 
 a {
     color: #000;
     text-decoration: none;
-    font-family:Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 p {
-   font-size: 25px;
-   font-family:Arial, sans-serif;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+    text-align: center; /* Asegúrate de que este estilo esté aquí si es para todos los párrafos */
 }
 
-img{
-  width:100%;
-}
-
-
-p{
-  text-align:center;
-}
-
-div img{
-    width:150px;
-    height: 150px;
-    display:block;
-    margin:auto;
-}
-
-div{
-  display: inline-block;
-  width: 24%;
-  margin: 5px;
-  padding: 2px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-main {
-    border: 5px #000 solid;
-    margin: 10px;
-}
- */
-/* 
-
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-}
- */
-/* img{
-    width: 200px;
-    height: 200px;
-    padding: 5px;
-} */
-
-/* .child {
-    position: relative;
+/* Estilos por defecto para los divs e imágenes */
+div {
     display: inline-block;
-    border: 5px black solid;
+    width: 24%; /* Valor inicial */
     margin: 5px;
-    border-radius: 5px;
-} */
-
-/* 
-
-.label {
-    display: none;
-    position: absolute;
-    top: 40%;
-    left: 40%;
-} */
-/* 
-.button {
-    display: inline-block;
-    border: 2px solid #000;
-    padding: 5px;
-    border-radius: 25px;
+    padding: 2px;
+    vertical-align: top; /* Agregado para alinear los divs en la parte superior */
+    box-sizing: border-box; /* Asegura que padding y border se incluyan en el width */
 }
- */
-/* 
-.button:hover {
-    background-color:#fff;
-} */
 
-/* 
-footer {
-    display: flex;
-    justify-content: center;
-} */
-
-/* 
-header {
-    border-radius: 5px;
-    border: 5px #000 solid;
-    margin: 10px;
-} */
-
-/* 
-.label {
-    display: none;
-    position: absolute;
-    top: 40%;
-    left: 40%;
-} */
-/* 
-.child:hover .label {
+div img {
+    width: 100%; /* La imagen ocupa el 100% del div inicialmente */
+    height: auto; /* Mantener la proporción de la imagen */
     display: block;
-} */
+    margin: auto;
+    max-height: none; /* Resetear cualquier max-height previo */
+}
+
+/* Consulta #1: Vista de tableta (Tablet View) */
+/* Se activa a 772px o menos */
+@media (max-width: 772px) {
+    div {
+        width: 45%; /* Los divs ocupan el 45% del ancho de la ventana gráfica */
+        margin: 10px 2.5%; /* Ajustar márgenes para centrar y distribuir mejor */
+    }
+
+    div img {
+        max-height: 30vh; /* Las imágenes no ocupan más del 30% de la altura de la ventana gráfica */
+        width: auto; /* Permite que la imagen se ajuste a la altura sin distorsión */
+    }
+}
+
+/* Consulta #2: Vista de pantalla grande (Large Screen View) */
+/* Se activa a 998px o más */
+@media (min-width: 998px) {
+    div {
+        width: 30%; /* Los divs son el 30% del ancho del viewport */
+        margin: 10px 1.5%; /* Ajustar márgenes para una mejor distribución */
+    }
+}
